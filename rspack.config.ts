@@ -3,11 +3,11 @@ import type { DevServer, RspackOptions } from "@rspack/core";
 
 const serverProxy: DevServer["proxy"] = [
   {
-    // Rspack 1.3.5 has this property typed
-    // onProxyRes: (proxyRes, req, res) => {
-    //   console.log(proxyRes.headers);
-    // },
-    // In Rspack 1.3.6, the `onProxyRes` property is not available
+    // In Rspack 1.3.5, the `onProxyRes` property is typed
+    onProxyRes: (proxyRes, req, res) => {
+      console.log(proxyRes.headers);
+    },
+    // In Rspack 1.3.6, the `onProxyRes` property is not available but still works
   },
 ];
 
